@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiteSearch</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <h1>SiteSearch</h1>
+      </div>
+      <div id="current-site" class="site-badge" title="Current site">—</div>
+    </div>
+
+    <form id="search-form">
+      <div class="search-box">
+        <input type="text" id="query" placeholder="Search this site…" autocomplete="off" autofocus>
+        <button type="submit" id="search-btn" title="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <div class="engine-row">
+      <span class="engine-label">Engine:</span>
+      <div class="engine-options">
+        <label class="engine-option">
+          <input type="radio" name="engine" value="google" checked>
+          <span>Google</span>
+        </label>
+        <label class="engine-option">
+          <input type="radio" name="engine" value="bing">
+          <span>Bing</span>
+        </label>
+        <label class="engine-option">
+          <input type="radio" name="engine" value="duckduckgo">
+          <span>DDG</span>
+        </label>
+      </div>
+    </div>
+
+    <div id="history-section" class="history-section" style="display:none;">
+      <div class="history-header">
+        <span class="history-label">Recent</span>
+        <button id="clear-history" class="clear-btn" title="Clear history">Clear</button>
+      </div>
+      <ul id="history-list" class="history-list"></ul>
+    </div>
+
+    <div class="footer">
+      <span class="shortcut">Alt+S to open</span>
+      <span class="separator">·</span>
+      <span class="hint">Enter to search</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
